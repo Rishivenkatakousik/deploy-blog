@@ -26,6 +26,10 @@ app.listen(3000, () => {
 
 mongoose.connect(process.env.MONGO_URL)
 
+app.get("/", (req, res) => {
+    res.json("hello world")
+})
+
 app.post("/register", async (req, res) => {
     const { username, password } = req.body;
     try {
